@@ -1,0 +1,199 @@
+/* =========================================
+   📦 1. ПІДКЛЮЧЕННЯ ЛОКАЛЬНОГО ШРИФТУ
+   (для виконання завдання з FontSquirrel/Fontesk)
+   ========================================= */
+@font-face {
+  font-family: 'CustomDisplay';
+  src: url('fonts/custom-display.woff2') format('woff2'),
+       url('fonts/custom-display.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Текст з'являється миттєво, потім замінюється */
+}
+
+/* =========================================
+   🎯 2. ЗМІННІ ТА РОЗПОДІЛ ШРИФТІВ
+   ========================================= */
+:root {
+  /* Основний текст (читабельний гротеск) */
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  /* Заголовки та цитати (елегантна антиква) */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  
+  /* Інтерфейс: навігація, кнопки, лейбли (геометричний гротеск) */
+  --font-ui: 'Montserrat', 'Segoe UI', sans-serif;
+  
+  /* Локальний шрифт (фолбек на Montserrat, поки немає файлу) */
+  --font-custom: 'CustomDisplay', var(--font-ui);
+
+  /* Кольори */
+  --color-primary: #2b4c7e;
+  --color-accent: #e63946;
+  --color-text: #1d3557;
+  --color-muted: #457b9d;
+  --bg-light: #f1faee;
+  --bg-white: #ffffff;
+}
+
+/* =========================================
+   🛠 3. БАЗОВІ СТИЛІ
+   ========================================= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  line-height: 1.6;
+  background-color: var(--bg-light);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================
+   📍 НАВІГАЦІЯ (шрифт UI)
+   ========================================= */
+.site-header {
+  background: var(--bg-white);
+  padding: 1.2rem 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+nav { display: flex; gap: 2rem; justify-content: flex-end; align-items: center; }
+.nav-link {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+.nav-link:hover { color: var(--color-accent); }
+
+/* =========================================
+   🌟 HERO-СЕКЦІЯ (шрифт Заголовків + Тіла)
+   ========================================= */
+.hero {
+  text-align: center;
+  padding: 5rem 1.5rem;
+  background: linear-gradient(135deg, #f1faee 0%, #a8dadc 100%);
+}
+.hero-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  margin-bottom: 1.2rem;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+.hero-text {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  max-width: 650px;
+  margin: 0 auto 2rem;
+  color: var(--color-muted);
+}
+.btn-primary {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  padding: 0.9rem 2.2rem;
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(230, 57, 70, 0.3);
+}
+
+/* =========================================
+   🎨 СЕКЦІЯ З ІКОНКАМИ (іконковий шрифт + UI + Body)
+   ========================================= */
+.features {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.feature-card {
+  flex: 1 1 280px;
+  max-width: 340px;
+  background: var(--bg-white);
+  padding: 2.2rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.feature-icon {
+  font-size: 2.8rem;
+  color: var(--color-primary);
+  margin-bottom: 1.2rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+.feature-card:hover .feature-icon { transform: scale(1.2) rotate(-5deg); }
+
+.feature-card h3 {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  font-size: 1.3rem;
+}
+.feature-card p {
+  font-family: var(--font-body);
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+/* =========================================
+   💬 ЦИТАТА (шрифт Заголовків + UI для автора)
+   ========================================= */
+.quote-section {
+  background: var(--color-primary);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.styled-quote {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: #ffffff;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+.styled-quote cite {
+  display: block;
+  margin-top: 1.5rem;
+  font-family: var(--font-ui);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #a8dadc;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   📱 АДАПТИВНІСТЬ
+   ========================================= */
+@media (max-width: 768px) {
+  nav { justify-content: center; flex-wrap: wrap; gap: 1rem; }
+  .hero { padding: 3.5rem 1rem; }
+  .features { padding: 2.5rem 1rem; }
+}

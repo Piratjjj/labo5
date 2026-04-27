@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Веб-типографіка: Різні шрифти в одному проєкті</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- 🌐 1. Google Fonts (підключення двох шрифтів) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,600;1,600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- 🔤 2. Іконковий шрифт (Font Awesome 6) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="#" class="nav-link">Головна</a>
+      <a href="#" class="nav-link">Послуги</a>
+      <a href="#" class="nav-link">Портфоліо</a>
+      <a href="#" class="nav-link">Контакти</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero-секція -->
+    <section class="hero">
+      <h1 class="hero-title">Мистецтво веб-типографіки</h1>
+      <p class="hero-text">
+        Поєднання різних шрифтів створює візуальну ієрархію, покращує сприйняття контенту та додає сайту індивідуальності.
+      </p>
+      <button class="btn-primary">Дізнатися більше</button>
+    </section>
+
+    <!-- Секція з іконками -->
+    <section class="features">
+      <div class="feature-card">
+        <i class="fa-solid fa-layer-group feature-icon"></i>
+        <h3>Структура</h3>
+        <p>Чітке розділення контенту за допомогою контрастних шрифтів.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-text-width feature-icon"></i>
+        <h3>Читабельність</h3>
+        <p>Оптимальна висота рядка та довжина рядка для комфортного читання.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-palette feature-icon"></i>
+        <h3>Стиль</h3>
+        <p>Гармонійне поєднання антикв, гротесків та акцентних шрифтів.</p>
+      </div>
+    </section>
+
+    <!-- Цитата (демонстрація ще одного шрифту) -->
+    <section class="quote-section">
+      <blockquote class="styled-quote">
+        “Типографіка — це одяг слів. Вона може зробити текст красивим, доступним і запам'ятовуваним.”
+        <cite>— Ерік Шпікельманн</cite>
+      </blockquote>
+    </section>
+  </main>
+
+</body>
+</html>
